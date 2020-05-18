@@ -1,0 +1,41 @@
+//created on: 18.05.2020
+package com.sample
+
+//list any import classes here.
+import com.sample.data.*
+import com.sample.helper.*
+import java.time.Period;
+import function com.sample.helper.PeriodComparer.LT;
+import function com.sample.helper.PeriodComparer.GE;
+
+
+//declare any global variables here
+global com.sample.data.CheckResult checkResult;
+global java.lang.Integer check_person_pk;
+
+
+rule "Проверка, что для проверяемого лица есть дети с требуемыми характеристиками"
+dialect "mvel" 
+when
+	$p:Person(person_pk != check_person_pk)
+   	$pd1: PersonData(person_pk == $p.person_pk, atom_type == AtomType.BENEFIT_CATEGORY, atom_id == "1002", atom_state == true, atom_value == true)
+   	(
+   		(
+   		$pd2: PersonData(person_pk == $p.person_pk, atom_type == AtomType.UZSFO, atom_id == "010012", atom_state == true, LT(atom_value,"P16Y"))  
+   		)
+   		or
+   		(
+    	$pd3: PersonData(person_pk == $p.person_pk, atom_type == AtomType.UZSFO, atom_id == "010012", atom_state == true, GE(atom_value,"P16Y"))
+    	and ($pd4: PersonData(person_pk == $p.person_pk, atom_type == AtomType.UZSFO, atom_id == "010012", atom_state == true, LT(atom_value,"P18Y"))) 
+    	and ($pd5: PersonData(person_pk == $p.person_pk, atom_type == AtomType.UZSFO, atom_id == "020018", atom_state == true, atom_value == true))
+    	)
+ 	)
+then
+  System.out.println("В семье ФЛ есть лица, удовлетворяющие условиям");
+end
+
+
+
+
+
+
