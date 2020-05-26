@@ -9,7 +9,6 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.process.ProcessInstance;
 
-import com.sample.processcontext.BlockFunctionContext;
 import com.sample.processcontext.DataContext;
 
 /**

@@ -5,7 +5,6 @@ import java.time.Period;
 import org.kie.api.runtime.KieSession;
 
 import com.sample.data.AtomType;
-import com.sample.data.CheckResult;
 import com.sample.data.Person;
 import com.sample.data.PersonData;
 
