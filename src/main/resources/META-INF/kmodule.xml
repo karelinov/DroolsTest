@@ -9,7 +9,7 @@
         <ksession name="ksession-dtables"/>
     </kbase>
      -->
-    <kbase name="process" packages="com.sample.rules,com.sample.process">
+    <kbase name="process" packages="rules,process">
         <ksession name="ksession-process"/>
     </kbase>
 </kmodule>
