@@ -2,9 +2,9 @@
 package com.sample
 
 //list any import classes here.
-import com.sample.data.*
-import com.sample.helpers.*
-import com.sample.ProcessContext.*
+import com.sample.data.*;
+import com.sample.helpers.*;
+import com.sample.processcontext.*;
 import java.time.Period;
 import function com.sample.helpers.PeriodComparer.LT;
 import function com.sample.helpers.PeriodComparer.GE;

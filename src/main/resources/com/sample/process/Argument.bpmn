@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- origin at X=0.0 Y=0.0 -->
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:java="http://www.java.com/javaTypes" xmlns:tns="http://www.jboss.org/drools" xmlns="http://www.jboss.org/drools" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" id="Definition" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.5.1.Final-v20190425-2005-B1" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
-  <bpmn2:itemDefinition id="ItemDefinition_4" isCollection="false" structureRef="com.sample.ProcessContext.DataContext"/>
   <bpmn2:itemDefinition id="ItemDefinition_6" isCollection="false" structureRef="java.util.HashMap"/>
-  <bpmn2:itemDefinition id="ItemDefinition_2" isCollection="false" structureRef="com.sample.ProcessContext.BlockFunctionDescription"/>
   <bpmn2:itemDefinition id="ItemDefinition_527" isCollection="false" structureRef="java.util.ArrayList"/>
   <bpmn2:itemDefinition id="ItemDefinition_869" isCollection="false" structureRef="com.sample.helpers.ProcessHelper"/>
   <bpmn2:itemDefinition id="ItemDefinition_928" isCollection="false" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="ItemDefinition_1381" isCollection="false" structureRef="java.lang.Integer"/>
   <bpmn2:itemDefinition id="ItemDefinition_1498" isCollection="false" structureRef="java.lang.Boolean"/>
+  <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="com.sample.processcontext.DataContext"/>
+  <bpmn2:itemDefinition id="ItemDefinition_7" isCollection="false" structureRef="com.sample.processcontext.BlockFunctionDescription"/>
   <bpmn2:process id="com.sample.bpmn.Argument" tns:packageName="defaultPackage" name="Аргумент" isExecutable="true" processType="Private">
     <bpmn2:extensionElements>
-      <tns:import name="com.sample.ProcessContext.DataContext"/>
       <tns:import name="java.util.HashMap"/>
-      <tns:import name="com.sample.ProcessContext.BlockFunctionDescription"/>
       <tns:import name="java.util.ArrayList"/>
       <tns:import name="com.sample.helpers.ProcessHelper"/>
+      <tns:import name="com.sample.processcontext.DataContext"/>
+      <tns:import name="com.sample.processcontext.BlockFunctionDescription"/>
     </bpmn2:extensionElements>
-    <bpmn2:property id="datacontext" itemSubjectRef="ItemDefinition_4" name="datacontext"/>
-    <bpmn2:property id="curBFDescription" itemSubjectRef="ItemDefinition_2" name="curBFDescription"/>
+    <bpmn2:property id="datacontext" itemSubjectRef="ItemDefinition_3" name="datacontext"/>
+    <bpmn2:property id="curBFDescription" itemSubjectRef="ItemDefinition_7" name="curBFDescription"/>
     <bpmn2:property id="formulaItems" itemSubjectRef="ItemDefinition_527" name="formulaItems"/>
     <bpmn2:property id="curFormulaArgumentNumber" itemSubjectRef="ItemDefinition_1381" name="curFormulaArgumentNumber"/>
     <bpmn2:property id="curFormulaArgument" itemSubjectRef="ItemDefinition_928" name="curFormulaArgument"/>
@@ -143,8 +143,8 @@ kcontext.setVariable(&quot;datacontext&quot;, datacontext);
       <bpmn2:incoming>SequenceFlow_16</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_8">
-        <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_4" name="datacontext"/>
-        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_4" name="datacontext"/>
+        <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_3" name="datacontext"/>
+        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_3" name="datacontext"/>
         <bpmn2:inputSet id="InputSet_8" name="Input Set 8">
           <bpmn2:dataInputRefs>DataInput_1</bpmn2:dataInputRefs>
         </bpmn2:inputSet>

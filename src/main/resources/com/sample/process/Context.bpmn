@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- origin at X=0.0 Y=0.0 -->
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:java="http://www.java.com/javaTypes" xmlns:tns="http://www.jboss.org/drools" xmlns="http://www.jboss.org/drools" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" id="Definition" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.5.1.Final-v20190425-2005-B1" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
-  <bpmn2:itemDefinition id="ItemDefinition_5" isCollection="false" structureRef="com.sample.ProcessContext.DataContext"/>
   <bpmn2:itemDefinition id="ItemDefinition_597" isCollection="false" structureRef="com.sample.helpers.ProcessHelper"/>
   <bpmn2:itemDefinition id="ItemDefinition_598" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.util.HashMap"/>
-  <bpmn2:itemDefinition id="ItemDefinition_464" isCollection="false" structureRef="com.sample.ProcessContext.BlockFunctionDescription"/>
   <bpmn2:itemDefinition id="ItemDefinition_508" isCollection="false" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="ItemDefinition_6" isCollection="false" structureRef="com.sample.processcontext.DataContext"/>
+  <bpmn2:itemDefinition id="ItemDefinition_8" isCollection="false" structureRef="com.sample.processcontext.BlockFunctionDescription"/>
   <bpmn2:process id="com.sample.bpmn.Context" tns:packageName="defaultPackage" name="Контекст" isExecutable="true" processType="Private">
     <bpmn2:extensionElements>
-      <tns:import name="com.sample.ProcessContext.DataContext"/>
       <tns:import name="com.sample.helpers.ProcessHelper"/>
       <tns:import name="java.util.HashMap"/>
-      <tns:import name="com.sample.ProcessContext.BlockFunctionDescription"/>
+      <tns:import name="com.sample.processcontext.DataContext"/>
+      <tns:import name="com.sample.processcontext.BlockFunctionDescription"/>
     </bpmn2:extensionElements>
-    <bpmn2:property id="datacontext" itemSubjectRef="ItemDefinition_5" name="datacontext"/>
-    <bpmn2:property id="curBFDescription" itemSubjectRef="ItemDefinition_464" name="curBFDescription"/>
+    <bpmn2:property id="datacontext" itemSubjectRef="ItemDefinition_6" name="datacontext"/>
+    <bpmn2:property id="curBFDescription" itemSubjectRef="ItemDefinition_8" name="curBFDescription"/>
     <bpmn2:property id="isBlockFunction" itemSubjectRef="ItemDefinition_598" name="isBlockFunction"/>
     <bpmn2:property id="currentDefinitionName" itemSubjectRef="ItemDefinition_508" name="currentDefinitionName"/>
     <bpmn2:scriptTask id="_2" name="Hello" scriptFormat="http://www.java.com/java">
@@ -86,8 +86,8 @@ kcontext.setVariable(&quot;datacontext&quot;, datacontext);
       <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_3">
-        <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_5" name="datacontext"/>
-        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_5" name="datacontext"/>
+        <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_6" name="datacontext"/>
+        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_6" name="datacontext"/>
         <bpmn2:inputSet id="InputSet_3" name="Input Set 3">
           <bpmn2:dataInputRefs>DataInput_1</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
@@ -182,7 +182,7 @@ ProcessHelper.out(&quot;Context(&quot;+curBFDescription.sBlockFunction +&quot;):
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_3" bpmnElement="ScriptTask_2" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="373.0" y="580.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_8">
           <dc:Bounds height="21.0" width="31.0" x="412.0" y="594.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -234,7 +234,7 @@ ProcessHelper.out(&quot;Context(&quot;+curBFDescription.sBlockFunction +&quot;):
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_ScriptTask_3" targetElement="BPMNShape_EndEvent_1">
         <di:waypoint xsi:type="dc:Point" x="427.0" y="630.0"/>
         <di:waypoint xsi:type="dc:Point" x="427.0" y="690.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_15"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- origin at X=0.0 Y=0.0 -->
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:java="http://www.java.com/javaTypes" xmlns:tns="http://www.jboss.org/drools" xmlns="http://www.jboss.org/drools" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" id="Definition" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.5.1.Final-v20190425-2005-B1" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
-  <bpmn2:itemDefinition id="ItemDefinition_5" isCollection="false" structureRef="com.sample.ProcessContext.DataContext"/>
   <bpmn2:itemDefinition id="ItemDefinition_7" isCollection="false" structureRef="com.sample.helpers.ProcessHelper"/>
-  <bpmn2:itemDefinition id="ItemDefinition_299" isCollection="false" structureRef="com.sample.ProcessContext.BlockFunctionDescription"/>
   <bpmn2:itemDefinition id="ItemDefinition_553" isCollection="false" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="ItemDefinition_4" isCollection="false" structureRef="com.sample.data.Param"/>
   <bpmn2:itemDefinition id="ItemDefinition_501" isCollection="false" structureRef="java.util.ArrayList"/>
   <bpmn2:itemDefinition id="ItemDefinition_832" isCollection="false" structureRef="org.kie.api.runtime.rule.FactHandle.State"/>
   <bpmn2:itemDefinition id="ItemDefinition_833" isCollection="false" structureRef="org.kie.api.runtime.rule.FactHandle"/>
+  <bpmn2:itemDefinition id="ItemDefinition_6" isCollection="false" structureRef="com.sample.processcontext.DataContext"/>
+  <bpmn2:itemDefinition id="ItemDefinition_9" isCollection="false" structureRef="com.sample.processcontext.BlockFunctionDescription"/>
   <bpmn2:process id="com.sample.bpmn.Function" tns:packageName="defaultPackage" name="Функция" isExecutable="true" processType="Private">
     <bpmn2:extensionElements>
-      <tns:import name="com.sample.ProcessContext.DataContext"/>
       <tns:import name="com.sample.helpers.ProcessHelper"/>
-      <tns:import name="com.sample.ProcessContext.BlockFunctionDescription"/>
       <tns:import name="com.sample.data.Param"/>
       <tns:import name="java.util.ArrayList"/>
       <tns:import name="org.kie.api.runtime.rule.FactHandle"/>
       <tns:import name="org.kie.api.runtime.rule.FactHandle.State"/>
+      <tns:import name="com.sample.processcontext.DataContext"/>
+      <tns:import name="com.sample.processcontext.BlockFunctionDescription"/>
     </bpmn2:extensionElements>
-    <bpmn2:property id="datacontext" itemSubjectRef="ItemDefinition_5" name="datacontext"/>
-    <bpmn2:property id="curBFDescription" itemSubjectRef="ItemDefinition_299" name="curBFDescription"/>
+    <bpmn2:property id="datacontext" itemSubjectRef="ItemDefinition_6" name="datacontext"/>
+    <bpmn2:property id="curBFDescription" itemSubjectRef="ItemDefinition_9" name="curBFDescription"/>
     <bpmn2:property id="ruleFlowGroupName" itemSubjectRef="ItemDefinition_553" name="ruleFlowGroupName"/>
     <bpmn2:property id="factHandles" itemSubjectRef="ItemDefinition_501" name="factHandles"/>
     <bpmn2:scriptTask id="_2" name="Hello">
@@ -171,8 +171,8 @@ factHandles.forEach((value) ->
       <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_6">
-        <bpmn2:dataInput id="DataInput_3" itemSubjectRef="ItemDefinition_5" name="datacontext"/>
-        <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_5" name="datacontext"/>
+        <bpmn2:dataInput id="DataInput_3" itemSubjectRef="ItemDefinition_6" name="datacontext"/>
+        <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_6" name="datacontext"/>
         <bpmn2:inputSet id="InputSet_6" name="Input Set 6">
           <bpmn2:dataInputRefs>DataInput_3</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
