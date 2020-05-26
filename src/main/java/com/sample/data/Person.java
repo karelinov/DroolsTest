@@ -8,14 +8,14 @@ package com.sample.data;
  *
  */
 public class Person {
-	public Person(int person_pk) {
+	public Person(Integer person_pk) {
 		this.person_pk = person_pk;
 	}
 	
 	/**
 	 * ID ФЛ
 	 */
-	public int person_pk;
+	public Integer person_pk;
 	
 	
 	/**

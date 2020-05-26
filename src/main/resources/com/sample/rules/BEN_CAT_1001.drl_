@@ -13,7 +13,25 @@ import function com.sample.helper.PeriodComparer.GE;
 global com.sample.data.CheckResult checkResult;
 global java.lang.Integer check_person_pk;
 
+rule "A1"
+when 
+	$p:Person(person_pk != check_person_pk)
+   	$pd1: PersonData(person_pk == $p.person_pk, atom_type == AtomType.BENEFIT_CATEGORY, atom_id == "1002", atom_state == true, atom_value == true)
+then
+  System.out.println("Правило A1 сработало для ФЛ "+$p.person_pk);
+  System.out.println("$pd1 "+$pd1.atom_type+" "+$pd1.atom_id+" "+$pd1.atom_value);
+end
 
+rule "NA1"
+when 
+	$p:Person(person_pk != check_person_pk)
+   	not PersonData(person_pk == $p.person_pk, atom_type == AtomType.BENEFIT_CATEGORY, atom_id == "1002", atom_state == true, atom_value == true)
+then
+  System.out.println("Правило NA1 сработало для ФЛ "+$p.person_pk);
+end
+ 
+
+/*
 rule "Проверка, что для проверяемого лица есть дети с требуемыми характеристиками"
 dialect "mvel" 
 when
@@ -37,7 +55,7 @@ then
   //
   //checkResult.setRuleResult(drools.getRule(),true);
 end
-
+*/
 
 
 

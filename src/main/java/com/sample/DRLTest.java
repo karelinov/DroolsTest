@@ -21,18 +21,20 @@ public class DRLTest {
 	        KieServices ks = KieServices.Factory.get();
     	    KieContainer kContainer = ks.getKieClasspathContainer();
         	KieSession kSession = kContainer.newKieSession("ksession-rules");
-        	kieLogger = ks.getLoggers().newConsoleLogger(kSession);
+        	//kieLogger = ks.getLoggers().newConsoleLogger(kSession);
         	
         	InsertData.Insert1(kSession);
         	
         	// Результаты проверки корректности ЛК
             CheckResult checkResult = new CheckResult(null, AtomType.BENEFIT_CATEGORY, "1001");
             kSession.setGlobal("checkResult", checkResult);
-        	
+            
+            // Проверяемое ФЛ
+            kSession.setGlobal("check_person_pk", 1);
 
             // go !
             kSession.fireAllRules();
-            kieLogger.close();
+            //kieLogger.close();
             
             // Смотрим результаты
             System.out.println("checkResult.result = "+checkResult.result);

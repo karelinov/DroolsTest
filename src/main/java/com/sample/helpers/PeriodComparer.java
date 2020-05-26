@@ -1,4 +1,4 @@
-package com.sample.helper;
+package com.sample.helpers;
 
 import java.time.Period;
 
